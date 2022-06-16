@@ -63,7 +63,10 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="cart absolute right-0 top-4">
-          <BsCart3 onClick={toggleCart} className="text-2xl"></BsCart3>
+          <BsCart3
+            onClick={toggleCart}
+            className="text-2xl text-orange-500 cursor-pointer"
+          ></BsCart3>
         </div>
 
         {/* sidebar  */}
@@ -141,9 +144,14 @@ const Navbar = () => {
             </li>
           </ol>
 
-          <button className="flex mx-auto   text-white bg-orange-500 border-0 py-2 px-4 focus:outline-none hover:bg-orange-800 rounded text-md">
-            <BsHandbag className="text-xl mr-2" /> <span>Checkout</span>
-          </button>
+          <div className="flex">
+            <button className="flex mr-2   text-white bg-orange-500 border-0 p-2 focus:outline-none hover:bg-orange-800 rounded text-md">
+              <BsHandbag className="text-xl mr-2" /> <span>Checkout</span>
+            </button>
+            <button className="flex    text-white bg-orange-500 border-0 p-2 focus:outline-none hover:bg-orange-800 rounded text-md">
+              <span>Clear cart</span>
+            </button>
+          </div>
         </div>
       </div>
     </header>

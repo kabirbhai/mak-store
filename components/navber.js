@@ -1,7 +1,11 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import { BsCart3 } from "react-icons/bs";
-import { AiFillCloseCircle } from "react-icons/ai";
+import {
+  AiFillCloseCircle,
+  AiOutlineMinusCircle,
+  AiOutlinePlusCircle,
+} from "react-icons/ai";
 
 const Navbar = () => {
   const toggleCart = () => {
@@ -69,7 +73,7 @@ const Navbar = () => {
         {/* sidebar  */}
         <div
           ref={ref}
-          className="cartSidebar w-72 absolute top-4 rounded-md px-4 py-8 right-0 bg-yellow-100 hidden"
+          className="cartSidebar w-72 absolute top-4 rounded-md px-8 py-8 right-0 bg-yellow-100 hidden"
         >
           <h1 className="text-center text-orange-400 font-bold">
             Shopping cart
@@ -78,12 +82,15 @@ const Navbar = () => {
             onClick={toggleCart}
             className="absolute top-1 right-1 text-2xl cursor-pointer text-yellow-500  "
           ></AiFillCloseCircle>
-          <ol>
+          <ol className="list-decimal">
             <li>
-              <div className="flex">
-                <div className="w-3/4">t-shirt - store</div>
-                <div className="w-1/4 flex justify-center items-center bg-gray-300">
-                  1
+              <div className="flex justify-center items-center my-3">
+                <div className="w-3/4 font-semibold text-xl ">
+                  t-shirt - store
+                </div>
+                <div className="w-1/4 flex justify-between items-center bg-gray-300">
+                  <AiOutlineMinusCircle className="cursor-pointer" /> 1{" "}
+                  <AiOutlinePlusCircle className="cursor-pointer" />
                 </div>
               </div>
             </li>

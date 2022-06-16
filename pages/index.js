@@ -9,7 +9,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container  mx-auto">
         <img src="/coder.jpg" alt="" />
       </div>
       <section className="text-gray-600 body-font">

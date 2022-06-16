@@ -3,8 +3,8 @@ import Link from "next/link";
 import { BsCart3 } from "react-icons/bs";
 import {
   AiFillCloseCircle,
-  AiOutlineMinusCircle,
-  AiOutlinePlusCircle,
+  AiFillMinusCircle,
+  AiFillPlusCircle,
 } from "react-icons/ai";
 
 const Navbar = () => {
@@ -63,17 +63,13 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="cart absolute right-0 top-4">
-          <Link href="/">
-            <a>
-              <BsCart3 onClick={toggleCart} className="text-2xl"></BsCart3>
-            </a>
-          </Link>
+          <BsCart3 onClick={toggleCart} className="text-2xl"></BsCart3>
         </div>
 
         {/* sidebar  */}
         <div
           ref={ref}
-          className="cartSidebar w-72 absolute top-4 rounded-md px-8 py-8 right-0 bg-yellow-100 hidden"
+          className="cartSidebar h-screen z-10 w-72 absolute top-4 rounded-md px-8 py-8 right-0 bg-yellow-100 hidden"
         >
           <h1 className="text-center text-orange-400 font-bold">
             Shopping cart
@@ -88,9 +84,10 @@ const Navbar = () => {
                 <div className="w-3/4 font-semibold text-xl ">
                   t-shirt - store
                 </div>
-                <div className="w-1/4 flex justify-between items-center bg-gray-300">
-                  <AiOutlineMinusCircle className="cursor-pointer" /> 1{" "}
-                  <AiOutlinePlusCircle className="cursor-pointer" />
+                <div className="w-2/5 flex justify-between text-xl items-center">
+                  <AiFillMinusCircle className="cursor-pointer  text-yellow-500 " />{" "}
+                  <span>1</span>
+                  <AiFillPlusCircle className="cursor-pointer   text-yellow-500 " />
                 </div>
               </div>
             </li>

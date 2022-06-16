@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Link from "next/link";
-import { BsCart3 } from "react-icons/bs";
+import { BsCart3, BsHandbag } from "react-icons/bs";
 import {
   AiFillCloseCircle,
   AiFillMinusCircle,
@@ -91,7 +91,59 @@ const Navbar = () => {
                 </div>
               </div>
             </li>
+            <li>
+              <div className="flex justify-center items-center my-3">
+                <div className="w-3/4 font-semibold text-xl ">
+                  t-shirt - store
+                </div>
+                <div className="w-2/5 flex justify-between text-xl items-center">
+                  <AiFillMinusCircle className="cursor-pointer  text-yellow-500 " />{" "}
+                  <span>1</span>
+                  <AiFillPlusCircle className="cursor-pointer   text-yellow-500 " />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="flex justify-center items-center my-3">
+                <div className="w-3/4 font-semibold text-xl ">
+                  t-shirt - store
+                </div>
+                <div className="w-2/5 flex justify-between text-xl items-center">
+                  <AiFillMinusCircle className="cursor-pointer  text-yellow-500 " />{" "}
+                  <span>1</span>
+                  <AiFillPlusCircle className="cursor-pointer   text-yellow-500 " />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="flex justify-center items-center my-3">
+                <div className="w-3/4 font-semibold text-xl ">
+                  t-shirt - store
+                </div>
+                <div className="w-2/5 flex justify-between text-xl items-center">
+                  <AiFillMinusCircle className="cursor-pointer  text-yellow-500 " />{" "}
+                  <span>1</span>
+                  <AiFillPlusCircle className="cursor-pointer   text-yellow-500 " />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="flex justify-center items-center my-3">
+                <div className="w-3/4 font-semibold text-xl ">
+                  t-shirt - store
+                </div>
+                <div className="w-2/5 flex justify-between text-xl items-center">
+                  <AiFillMinusCircle className="cursor-pointer  text-yellow-500 " />{" "}
+                  <span>1</span>
+                  <AiFillPlusCircle className="cursor-pointer   text-yellow-500 " />
+                </div>
+              </div>
+            </li>
           </ol>
+
+          <button className="flex mx-auto   text-white bg-orange-500 border-0 py-2 px-4 focus:outline-none hover:bg-orange-800 rounded text-md">
+            <BsHandbag className="text-xl mr-2" /> <span>Checkout</span>
+          </button>
         </div>
       </div>
     </header>

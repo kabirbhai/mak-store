@@ -1,50 +1,93 @@
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import { BsCart3 } from "react-icons/bs";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 const Navbar = () => {
+  const toggleCart = () => {
+    if (ref.current.classList.contains("block")) {
+      ref.current.classList.remove("block");
+      ref.current.classList.add("hidden");
+    } else if (!ref.current.classList.contains("block")) {
+      ref.current.classList.remove("hidden");
+      ref.current.classList.add("block");
+    }
+  };
+  const ref = useRef();
   return (
-    <header>
-      <div className="flex flex-col md:flex-row justify-between py-6 items-center">
-        <div className="logo">
+    <header className="max-w-screen-2xl mx-auto relative">
+      <div className=" flex flex-col md:flex-row justify-start py-2 items-center shadow-md">
+        <div className="logo mx-10">
           <Link href="/">
-            <a className="text-4xl">MakStore</a>
+            <a className="text-3xl text-orange-500 font-sans font-bold">
+              T-store
+            </a>
           </Link>
         </div>
         <div className="navItem">
-          <ul className="flex mt-5 md:mt-0  space-x-4">
+          <ul className="flex mt-5 md:mt-0  font-bold uppercase  space-x-4">
             <Link href="/">
               <a>
                 {" "}
-                <li>Glass</li>
+                <li>Home</li>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/tshirt">
               <a>
                 {" "}
-                <li>Mug</li>
+                <li>tShirt</li>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/hoodie">
               <a>
                 {" "}
-                <li>t-shirt</li>
+                <li>Hoodies</li>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/mugs">
               <a>
                 {" "}
-                <li>Phone</li>
+                <li>Mugs</li>
+              </a>
+            </Link>
+            <Link href="/sticker">
+              <a>
+                {" "}
+                <li>Stickers</li>
               </a>
             </Link>
           </ul>
         </div>
-        <div className="cart absolute right-0">
+        <div className="cart absolute right-0 top-4">
           <Link href="/">
             <a>
-              <BsCart3 className="text-2xl"></BsCart3>
+              <BsCart3 onClick={toggleCart} className="text-2xl"></BsCart3>
             </a>
           </Link>
+        </div>
+
+        {/* sidebar  */}
+        <div
+          ref={ref}
+          className="cartSidebar w-72 absolute top-4 rounded-md px-4 py-8 right-0 bg-yellow-100 hidden"
+        >
+          <h1 className="text-center text-orange-400 font-bold">
+            Shopping cart
+          </h1>
+          <AiFillCloseCircle
+            onClick={toggleCart}
+            className="absolute top-1 right-1 text-2xl cursor-pointer text-yellow-500  "
+          ></AiFillCloseCircle>
+          <ol>
+            <li>
+              <div className="flex">
+                <div className="w-3/4">t-shirt - store</div>
+                <div className="w-1/4 flex justify-center items-center bg-gray-300">
+                  1
+                </div>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </header>

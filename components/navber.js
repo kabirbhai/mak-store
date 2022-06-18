@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import { BsCart3, BsHandbag } from "react-icons/bs";
+import { IoMdContact } from "react-icons/io";
 import {
   AiFillCloseCircle,
   AiFillMinusCircle,
@@ -19,54 +20,62 @@ const Navbar = () => {
   };
   const ref = useRef();
   return (
-    <header className="max-w-screen-2xl mx-auto relative">
-      <div className=" flex flex-col md:flex-row justify-start py-2 items-center shadow-md">
-        <div className="logo mx-10">
+    <header className="container-fluid bg-yellow-100 z-10 sticky top-0  shadow-md ">
+      <nav className="container mx-auto relative flex flex-col md:flex-row justify-start py-4 items-center">
+        <div className="logo mr-6 pb-4">
           <Link href="/">
-            <a className="text-3xl text-orange-500 font-sans font-bold">
+            <a className="text-5xl text-orange-500 font-sans font-bold">
               T-store
             </a>
           </Link>
         </div>
         <div className="navItem">
-          <ul className="flex mt-5 md:mt-0  font-bold uppercase  space-x-4">
+          <ul className="flex  mt-5 md:mt-0  font-bold uppercase  space-x-4">
             <Link href="/">
               <a>
                 {" "}
-                <li>Home</li>
+                <li className="hover:text-orange-500">Home</li>
               </a>
             </Link>
             <Link href="/tshirt">
               <a>
                 {" "}
-                <li>tShirt</li>
+                <li className="hover:text-orange-500">tShirt</li>
               </a>
             </Link>
             <Link href="/hoodie">
               <a>
                 {" "}
-                <li>Hoodies</li>
+                <li className="hover:text-orange-500">Hoodies</li>
               </a>
             </Link>
             <Link href="/mugs">
               <a>
                 {" "}
-                <li>Mugs</li>
+                <li className="hover:text-orange-500">Mugs</li>
               </a>
             </Link>
             <Link href="/sticker">
               <a>
                 {" "}
-                <li>Stickers</li>
+                <li className="hover:text-orange-500">Stickers</li>
               </a>
             </Link>
           </ul>
         </div>
-        <div className="cart absolute right-0 top-4">
-          <BsCart3
-            onClick={toggleCart}
-            className="text-2xl text-orange-500 cursor-pointer"
-          ></BsCart3>
+        <div className="cart absolute right-0 top-8">
+          <div className="flex">
+            <Link href="/login">
+              <a>
+                {" "}
+                <IoMdContact className="text-3xl text-orange-500 cursor-pointer" />
+              </a>
+            </Link>
+            <BsCart3
+              onClick={toggleCart}
+              className="text-2xl ml-3 text-orange-500 cursor-pointer"
+            ></BsCart3>
+          </div>
         </div>
 
         {/* sidebar  */}
@@ -153,7 +162,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 };
